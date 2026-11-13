@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DoneSchool — Habits & Subjects</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🎯 DoneSchool</div>
+    <nav id="nav"></nav>
+    <button id="profileBtn" class="btn ghost small">👤 Profile</button>
+  </header>
+
+  <main>
+    <!-- ============ STUDENT: TODAY ============ -->
+    <section id="viewToday" class="hidden">
+      <h1 class="page-title" id="todayTitle">Today</h1>
+      <p class="subtitle" id="todaySub"></p>
+      <div id="weekStrip" class="week-strip"></div>
+
+      <div class="section-head">
+        <h2 class="section-title">Habits</h2>
+        <button class="btn secondary small" data-action="add-habit">+ New habit</button>
+      </div>
+      <div id="habitList" class="stack"></div>
+
+      <div class="section-head">
+        <h2 class="section-title">Subjects</h2>
+        <button class="btn secondary small" data-action="add-subject-modal">+ New subject</button>
+      </div>
+      <p class="hint-inline">Tap a button to log study minutes. Weekly goal progress updates live.</p>
+      <div id="studentSubjects" class="cards"></div>
+    </section>
+
+    <!-- ============ STUDENT: STATS ============ -->
+    <section id="viewStats" class="hidden">
+      <h1 class="page-title">My Stats</h1>
+      <p class="subtitle">Your progress over the last 7 days.</p>
+      <div id="statSummary" class="summary-grid"></div>
+
+      <h2 class="section-title">Habit history</h2>
+      <div id="habitStats" class="stack"></div>
+
+      <h2 class="section-title">Study time (last 7 days)</h2>
+      <div id="subjectStats" class="stack"></div>
+    </section>
+
+    <!-- ============ TEACHER: DASHBOARD ============ -->
+    <section id="viewDashboard" class="hidden">
+      <h1 class="page-title">Class Dashboard</h1>
+      <p class="subtitle" id="dashSub"></p>
+      <div id="teachSummary" class="summary-grid"></div>
+
+      <div class="section-head">
+        <h2 class="section-title">Today's attendance</h2>
+        <span class="hint-inline" id="attDate"></span>
+      </div>
+      <div id="attendanceList" class="stack"></div>
+
+      <h2 class="section-title">Recent grades</h2>
+      <div id="recentGrades" class="stack"></div>
+    </section>
+
+    <!-- ============ TEACHER: STUDENTS ============ -->
+    <section id="viewStudents" class="hidden">
+      <h1 class="page-title">Students</h1>
+      <div class="card inline-form">
+        <input id="newStudentName" placeholder="Student name" />
+        <input id="newStudentClass" placeholder="Class / grade, e.g. 10-B" />
+        <button class="btn primary" data-action="add-student">Add</button>
+      </div>
+      <div id="studentList" class="stack"></div>
+    </section>
+
+    <!-- ============ BOTH: SUBJECTS ============ -->
+    <section id="viewSubjects" class="hidden">
+      <h1 class="page-title">Subjects</h1>
+      <p class="subtitle" id="subjectsSub"></p>
+      <div class="card inline-form">
+        <input id="newSubjectName" placeholder="Subject name, e.g. Mathematics" />
+        <input id="newSubjectGoal" type="number" min="1" max="60" placeholder="Weekly goal (hrs)" />
+        <button class="btn primary" data-action="add-subject-form">Add</button>
+      </div>
+      <div id="subjectManage" class="cards"></div>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-box" id="modalBox"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
